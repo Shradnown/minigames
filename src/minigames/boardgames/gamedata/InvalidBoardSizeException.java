@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package boardgames.gamedata;
+package minigames.boardgames.gamedata;
 
 /**
  *
  * @author User
  */
-public class Battleships {
+public class InvalidBoardSizeException extends Exception{
     
 }

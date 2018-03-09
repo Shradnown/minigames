@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package boardgames;
+package minigames.boardgames.gamedata;
 
 /**
  *
  * @author User
  */
-public class BoardGameUI {
+public class Battleships {
     
 }

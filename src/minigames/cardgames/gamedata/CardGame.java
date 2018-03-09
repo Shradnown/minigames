@@ -1,4 +1,4 @@
-package cardgames.gamedata;
+package minigames.cardgames.gamedata;
 
 import java.util.Scanner;
 

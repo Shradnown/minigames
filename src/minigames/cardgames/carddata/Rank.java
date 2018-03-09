@@ -1,4 +1,4 @@
-package cardgames.carddata;
+package minigames.cardgames.carddata;
 
 /**
  *

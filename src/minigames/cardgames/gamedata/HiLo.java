@@ -1,6 +1,7 @@
-package cardgames.gamedata;
+package minigames.cardgames.gamedata;
 
-import cardgames.carddata.*;
+import minigames.cardgames.carddata.Card;
+import minigames.cardgames.carddata.Deck;
 import java.util.ArrayList;
 
 /**

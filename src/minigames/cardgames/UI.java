@@ -1,6 +1,9 @@
-package cardgames;
+package minigames.cardgames;
 
-import cardgames.gamedata.*;
+import minigames.cardgames.gamedata.Scoreboard;
+import minigames.cardgames.gamedata.CardGame;
+import minigames.cardgames.gamedata.HiLo;
+import minigames.cardgames.gamedata.Blackjack;
 import java.util.Scanner;
 
 /**
