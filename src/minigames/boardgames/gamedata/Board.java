@@ -12,6 +12,7 @@ public class Board {
 
     public Board() {
         board = Coordinate.createGridBoard();
+        boardSize = 10;
     }
     
     public Board(int boardSize) throws InvalidBoardSizeException {
@@ -29,30 +30,36 @@ public class Board {
     
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < boardSize; i++) {
-            sb.append("----");
+        for (int i = 0; i <= boardSize; i++) {
+            sb.append("====");
         }
-        sb.append("\n");
+        sb.append("===\n|    |");
+        char column = 'A';
         for (int i = 0; i < boardSize; i++) {
-            sb.append("|");
-            sb.append(board.get(i).getColumn());
+            sb.append("| ");
+            sb.append(column);
+            column++;
+            sb.append(" ");
         }
-        sb.append("|\n");
+        sb.append("|\n===");
+        for (int i = 0; i <= boardSize; i++) {
+            sb.append("====");
+        }
         
         for (int i = 0; i < boardSize; i++) {
+            sb.append("\n| ");
+            sb.append(String.format("%-3s", String.valueOf(i+1)));
             sb.append("|");
-            sb.append(board.get(i).getRow());
-            for (int n = 0; n < boardSize; n++) {
-                sb.append("----");
-            }
-            sb.append("\n");
             for (int n = 0; n < boardSize; n++) {
                 sb.append("|");
                 sb.append(board.get(i));
             }
-            sb.append("|\n");
+            sb.append("|\n---");
+            for (int n = 0; n <= boardSize; n++) {
+                sb.append("----");
+            }
+            
         }
-        
         return sb.toString();
     }
     
