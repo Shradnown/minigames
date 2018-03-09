@@ -11,6 +11,7 @@ public class Card {
     //Defines cards as having a rank and a suit
     private final Rank rank;
     private final Suit suit;
+    
     public Card(Rank rank, Suit suit) {
         this.rank = rank;
         this.suit = suit;
