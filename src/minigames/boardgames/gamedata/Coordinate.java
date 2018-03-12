@@ -89,13 +89,16 @@ public class Coordinate {
         }
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 43 * hash + this.row;
+        hash = 43 * hash + this.column;
+        return hash;
+    }
+
     public boolean equals(int row, char column) {
-        if (row == this.row && column == this.column){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return row == this.row && column == this.column;
     }
     
     
