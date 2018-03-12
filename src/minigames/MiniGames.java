@@ -28,6 +28,18 @@ public class MiniGames {
             System.out.println("Something went wrong");
         }
         System.out.println(board);
+        try {
+            System.out.print(board.getBoard().get(board.findCoordinateIndex("E5")).getColumn());
+            System.out.println(board.getBoard().get(board.findCoordinateIndex("E5")).getRow());
+            System.out.print(board.getBoard().get(board.getAboveIndex("E5")).getColumn());
+            System.out.println(board.getBoard().get(board.getAboveIndex("E5")).getRow());
+            System.out.println(board.getBoard().indexOf(board.getBoard().get(board.findCoordinateIndex("E5"))));
+            System.out.println(board.getBoard().indexOf(board.getBoard().get(board.findCoordinateIndex("E4"))));
+        }
+        catch (CoordinateNotFoundException e) {
+            System.out.println("Something went wrong");
+        }
+        
         
         boolean loop = true;
         while (loop) {

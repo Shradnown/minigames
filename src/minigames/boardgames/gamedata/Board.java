@@ -27,6 +27,46 @@ public class Board {
         }
         board = Coordinate.createGridBoard(boardSize);
     }
+
+    public ArrayList<Coordinate> getBoard() {
+        return board;
+    }
+    
+    public int getAboveIndex(String coordinate) {
+        try {
+            int indexInput = findCoordinateIndex(coordinate);
+            if (indexInput <= boardSize) {
+                return -1;
+            }
+            else {
+                return indexInput-boardSize;
+            }
+        }
+        catch (CoordinateNotFoundException e) {
+            System.out.println("Invalid Coordinate");
+            //throw new InvalidCoordinateException();
+        }
+        return -1;
+    }
+    
+    public int getBelowIndex(String coordinate) {
+        try {
+            int indexInput = findCoordinateIndex(coordinate);
+            if (indexInput >= boardSize * (boardSize-1)) {
+                return -1;
+            }
+            else {
+                return indexInput+boardSize;
+            }
+        }
+        catch (CoordinateNotFoundException e) {
+            System.out.println("Invalid Coordinate");
+            //throw new InvalidCoordinateException();
+        }
+        return -1;
+    }
+    
+    
     /*
     public int findCoordinateIndex(String coordinate) throws CoordinateNotFoundException {
         coordinate = coordinate.trim();
@@ -72,7 +112,9 @@ public class Board {
         }
     }
     
-    
+    public boolean placeShip(String start, String end) {
+        return false;
+    }
     
     public String toString() {
         StringBuilder sb = new StringBuilder();
