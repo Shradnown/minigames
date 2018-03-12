@@ -4,6 +4,6 @@ package minigames.boardgames.gamedata;
  *
  * @author User
  */
-public class InvalidBoardSizeException extends Exception{
+public class InvalidCoordinateException extends Exception{
     
 }

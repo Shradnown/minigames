@@ -80,27 +80,30 @@ public class Coordinate {
     
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() == obj.getClass()){
-            Coordinate otherClass = (Coordinate)obj;
-            if (row == otherClass.row && column == otherClass.column) {
-                return true;
-            }
-            else {
-                return false;
-            }
+        if (obj instanceof Coordinate) {
+            Coordinate testedCoordinate = (Coordinate) obj;
+            return this.row == testedCoordinate.row && this.column == testedCoordinate.column;
         }
         else {
             return false;
         }
     }
+
+    public boolean equals(int row, char column) {
+        if (row == this.row && column == this.column){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    
     protected static ArrayList<Coordinate> createGridBoard() {
         ArrayList<Coordinate> board = new ArrayList<>();
         for (int row = 1; row <= 10; row++) {
+            char column = 'A';
             for (int c = 1; c <= 10; c++) {
-                char column = 'A';
                 board.add(new Coordinate(row, column));
                 column++;
             }
@@ -114,12 +117,12 @@ public class Coordinate {
         }
         ArrayList<Coordinate> board = new ArrayList<>();
         for (int row = 1; row <= size; row++) {
+            char column = 'A';
             if (row == 27){
                 System.out.println("Maximum size of grid is 26");
                 return board;
             }
             for (int c = 1; c <= size; c++) {
-                char column = 'A';
                 board.add(new Coordinate(row, column));
                 column++;
             }
@@ -130,8 +133,8 @@ public class Coordinate {
     protected static ArrayList<Coordinate> createGridBoard(boolean visible) {
         ArrayList<Coordinate> board = new ArrayList<>();
         for (int row = 1; row <= 10; row++) {
+            char column = 'A';
             for (int c = 1; c <= 10; c++) {
-                char column = 'A';
                 board.add(new Coordinate(row, column, visible));
                 column++;
             }
@@ -145,12 +148,12 @@ public class Coordinate {
         }
         ArrayList<Coordinate> board = new ArrayList<>();
         for (int row = 1; row <= size; row++) {
+            char column = 'A';
             if (row == 27){
                 System.out.println("Maximum size of grid is 26");
                 return board;
             }
             for (int c = 1; c <= size; c++) {
-                char column = 'A';
                 board.add(new Coordinate(row, column, visible));
                 column++;
             }
